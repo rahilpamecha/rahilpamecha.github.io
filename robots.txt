@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rahilpamecha.com/sitemap.xml
