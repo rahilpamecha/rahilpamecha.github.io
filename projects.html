@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Rahil Pamecha | Software Engineer Portfolio</title>
+    <meta name="description" content="Explore projects and technical work by Rahil Pamecha. Software professional at Barclays, Pune. View web applications, tools, and open-source contributions.">
+    <meta name="keywords" content="Rahil Pamecha projects, Rahil Pamecha portfolio, Rahil Pamecha GitHub, Rahil Pamecha software engineer, Rahil Pamecha developer">
+    <meta name="author" content="Rahil Pamecha">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="ayL37n2ZiwuXRQy0ONevMOcYsDTdZ2sj0wE-CNwsstM" />
+    <link rel="canonical" href="https://rahilpamecha.github.io/projects.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projects by Rahil Pamecha — Software Engineer Portfolio">
+    <meta property="og:description" content="Technical projects and portfolio by Rahil Pamecha, software professional at Barclays.">
+    <meta property="og:url" content="https://rahilpamecha.github.io/projects.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2563eb; --accent: #06b6d4; --bg-dark: #0f172a; --bg-card: #1e293b; --text-primary: #f8fafc; --text-secondary: #94a3b8; --text-muted: #64748b; --border: #334155; --gradient-1: linear-gradient(135deg, #2563eb, #06b6d4); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.7; }
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(15,23,42,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0.75rem 0; }
+        .nav-container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.25rem; font-weight: 700; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .container { max-width: 900px; margin: 0 auto; padding: 7rem 2rem 4rem; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+        h1 .highlight { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .project-card { background: var(--bg-card); padding: 2rem; border-radius: 16px; border: 1px solid var(--border); transition: border-color 0.3s, transform 0.3s; }
+        .project-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+        .project-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-card h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .project-card p { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tag { padding: 0.2rem 0.6rem; background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.2); border-radius: 6px; font-size: 0.78rem; color: var(--accent); font-weight: 500; }
+        .project-link { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent); font-size: 0.88rem; font-weight: 600; text-decoration: none; margin-top: 1rem; }
+        .project-link:hover { text-decoration: underline; }
+        .cta-section { text-align: center; margin-top: 3rem; padding: 3rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border); }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 12px; background: var(--gradient-1); color: white; text-decoration: none; font-weight: 600; transition: transform 0.3s; }
+        .cta:hover { transform: translateY(-2px); }
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
+        footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width: 768px) { h1 { font-size: 1.75rem; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Rahil Pamecha</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Projects by <span class="highlight">Rahil Pamecha</span></h1>
+        <p class="subtitle">A showcase of technical projects, applications, and contributions.</p>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">🏦</div>
+                <h2>Enterprise Banking Solutions</h2>
+                <p>Contributed to building and maintaining enterprise-grade banking applications at Barclays, serving millions of customers with high availability and security standards.</p>
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Enterprise</span>
+                    <span class="tag">FinTech</span>
+                    <span class="tag">Microservices</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🌐</div>
+                <h2>Personal Portfolio Website</h2>
+                <p>Designed and developed this SEO-optimized personal portfolio website with responsive design, structured data, and modern CSS techniques.</p>
+                <div class="tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">SEO</span>
+                </div>
+                <a href="https://github.com/rahilpamecha/rahilpamecha.github.io" class="project-link" target="_blank" rel="noopener noreferrer">🔗 View on GitHub →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">📊</div>
+                <h2>Data Processing Pipeline</h2>
+                <p>Built automated data processing workflows for handling large-scale data transformation, validation, and reporting in enterprise environments.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">ETL</span>
+                    <span class="tag">Automation</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🛒</div>
+                <h2>Web Application Development</h2>
+                <p>Developed dynamic web applications using PHP and Java, implementing MVC architecture, user authentication, and database-driven features.</p>
+                <div class="tags">
+                    <span class="tag">PHP</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">MVC</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🔐</div>
+                <h2>API Integration Services</h2>
+                <p>Designed and implemented RESTful API integrations for connecting diverse systems, ensuring data consistency and secure communication between services.</p>
+                <div class="tags">
+                    <span class="tag">REST APIs</span>
+                    <span class="tag">JSON</span>
+                    <span class="tag">Authentication</span>
+                    <span class="tag">Integration</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">📱</div>
+                <h2>Customer-Facing Applications</h2>
+                <p>Built customer-facing digital solutions focusing on user experience, performance optimization, and accessibility across different devices and platforms.</p>
+                <div class="tags">
+                    <span class="tag">UX</span>
+                    <span class="tag">Responsive Design</span>
+                    <span class="tag">Performance</span>
+                    <span class="tag">A11y</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Want to see more work by Rahil Pamecha?</h2>
+            <p>Check out my GitHub profile for open-source projects and code samples.</p>
+            <a href="https://github.com/rahilpamecha" class="cta" target="_blank" rel="noopener noreferrer">🐙 Visit GitHub Profile</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <strong>Rahil Pamecha</strong> — Software Professional at Barclays, Pune. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="projects.html">Projects</a>
+        </p>
+    </footer>
+</body>
+</html>
