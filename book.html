@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rahil Pamecha — Author of "Of All The Times"</title>
-<meta name="description" content="Official author page of Rahil Pamecha, author of the debut literary romance novel 'Of All The Times'. Read book excerpts, chapters, and author biography.">
-<meta name="keywords" content="Rahil Pamecha, Rahil Pamecha author, Rahil Pamecha book, Of All The Times, Rahil Pamecha writer, Of All The Times book">
+<meta name="description" content="Official author page of Rahil Pamecha, author of the debut literary romance novel 'Of All The Times'. Read excerpts, chapter previews, and author biography.">
+<meta name="keywords" content="Rahil Pamecha, Rahil Pamecha author, Rahil Pamecha book, Of All The Times, Rahil Pamecha writer, Of All The Times novel, literary romance, love story">
 <meta name="author" content="Rahil Pamecha">
 <meta name="robots" content="index, follow">
 <meta name="google-site-verification" content="ayL37n2ZiwuXRQy0ONevMOcYsDTdZ2sj0wE-CNwsstM" />
@@ -16,9 +16,20 @@
 <meta property="og:title" content="Of All The Times — by Rahil Pamecha">
 <meta property="og:description" content="A love story about two people who were always right for each other — and never quite at the same time. Debut novel by Rahil Pamecha.">
 <meta property="og:url" content="https://rahilpamecha.github.io/book.html">
-<meta property="book:author" content="https://rahilpamecha.github.io/about.html">
+<meta property="og:image" content="https://rahilpamecha.github.io/images/book-cover.jpg">
+<meta property="og:site_name" content="Rahil Pamecha — Author">
+<meta property="book:author" content="https://rahilpamecha.github.io/">
 
-<!-- Schema.org Structured Data -->
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Of All The Times — by Rahil Pamecha">
+<meta name="twitter:description" content="A love story about two people who were always right for each other — and never quite at the same time.">
+<meta name="twitter:image" content="https://rahilpamecha.github.io/images/book-cover.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+
+<!-- Schema.org JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,6 +54,7 @@
       },
       "genre": "Literary Romance",
       "description": "A love story about two people who were always right for each other — and never quite at the same time.",
+      "image": "https://rahilpamecha.github.io/images/book-cover.jpg",
       "inLanguage": "en",
       "url": "https://rahilpamecha.github.io/book.html"
     }
@@ -53,6 +65,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
     --midnight: #07091A;
     --navy: #0E1228;
@@ -67,7 +80,9 @@
     --body: 'Lora', Georgia, serif;
     --sans: 'Inter', system-ui, sans-serif;
   }
+
   html { scroll-behavior: smooth; }
+
   body {
     background: var(--midnight);
     color: var(--parchment);
@@ -76,6 +91,8 @@
     line-height: 1.75;
     overflow-x: hidden;
   }
+
+  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -84,8 +101,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 3rem;
+    background: transparent;
+    transition: background 0.4s, backdrop-filter 0.4s, padding 0.3s;
+  }
+  nav.scrolled {
     background: rgba(7,9,26,0.92);
     backdrop-filter: blur(12px);
+    padding: 0.85rem 3rem;
     border-bottom: 1px solid rgba(201,168,76,0.15);
   }
   .nav-logo {
@@ -98,27 +120,37 @@
   }
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     list-style: none;
   }
   .nav-links a {
     font-family: var(--sans);
     font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-weight: 400;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--parchment);
     text-decoration: none;
-    opacity: 0.85;
+    opacity: 0.8;
     transition: opacity 0.2s, color 0.2s;
   }
   .nav-links a:hover { opacity: 1; color: var(--gold); }
-  .nav-links a.portfolio-link {
-    color: #60a5fa;
-    border: 1px solid rgba(96,165,250,0.4);
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
+  .nav-links .portfolio-btn {
+    color: var(--gold) !important;
+    border: 1px solid rgba(201,168,76,0.35);
+    padding: 0.35rem 0.85rem;
+    border-radius: 3px;
+    opacity: 0.95 !important;
+    transition: all 0.25s ease;
   }
+  .nav-links .portfolio-btn:hover {
+    background: rgba(201,168,76,0.12);
+    border-color: var(--gold);
+    color: var(--cream) !important;
+  }
+
+
+  /* ── HERO ── */
   #hero {
     min-height: 100vh;
     display: grid;
@@ -126,16 +158,38 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 7rem 3rem 4rem;
+    padding: 6rem 3rem 4rem;
     gap: 4rem;
   }
   .hero-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.08) 0%, transparent 60%),
+    background: radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 60%),
                 radial-gradient(ellipse at 10% 80%, rgba(21,26,54,0.8) 0%, transparent 50%);
     pointer-events: none;
   }
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: drift var(--dur, 6s) var(--delay, 0s) ease-in-out infinite;
+  }
+  @keyframes drift {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    20% { opacity: var(--max-op, 0.4); }
+    80% { opacity: var(--max-op, 0.4); }
+    100% { transform: translateY(-120px) translateX(var(--dx, 20px)); opacity: 0; }
+  }
+
   .hero-cover {
     position: relative;
     display: flex;
@@ -152,8 +206,19 @@
   }
   .hero-cover img:hover {
     transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8), 0 0 80px rgba(201,168,76,0.2);
   }
-  .hero-text { z-index: 1; }
+  .hero-cover::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 70%);
+    z-index: -1;
+  }
+
+  .hero-text {
+    z-index: 1;
+  }
   .hero-eyebrow {
     font-family: var(--sans);
     font-size: 0.72rem;
@@ -181,14 +246,17 @@
     color: var(--cream);
     margin-bottom: 0.5rem;
   }
-  .hero-title em { font-style: italic; color: var(--gold); }
-  .hero-author {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    font-weight: 400;
+  .hero-title em {
     font-style: italic;
     color: var(--gold);
-    margin-bottom: 2rem;
+  }
+  .hero-author {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
     letter-spacing: 0.05em;
   }
   .hero-tagline {
@@ -196,36 +264,74 @@
     font-size: 1.05rem;
     font-style: italic;
     color: var(--parchment);
-    opacity: 0.9;
+    opacity: 0.85;
     line-height: 1.7;
-    max-width: 440px;
-    margin-bottom: 2.5rem;
+    max-width: 420px;
+    margin-bottom: 3rem;
     border-left: 2px solid var(--gold-dim);
     padding-left: 1.25rem;
   }
-  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
   .btn {
     display: inline-block;
     font-family: var(--sans);
     font-size: 0.78rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     text-decoration: none;
     padding: 0.9rem 2rem;
-    border-radius: 4px;
+    border-radius: 2px;
     transition: all 0.25s ease;
     cursor: pointer;
   }
-  .btn-primary { background: var(--gold); color: var(--midnight); }
-  .btn-primary:hover { background: #E0BC5E; transform: translateY(-2px); }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--midnight);
+  }
+  .btn-primary:hover { background: #E0BC5E; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
   .btn-outline {
     background: transparent;
     color: var(--parchment);
     border: 1px solid rgba(232,220,200,0.3);
   }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.5;
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--parchment), transparent);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── SECTIONS ── */
   section { position: relative; }
+
   .section-label {
     font-family: var(--sans);
     font-size: 0.68rem;
@@ -244,7 +350,12 @@
     height: 1px;
     background: var(--gold);
   }
-  #book { background: var(--navy); padding: 7rem 3rem; }
+
+  /* ── ABOUT BOOK ── */
+  #book {
+    background: var(--navy);
+    padding: 7rem 3rem;
+  }
   .book-inner {
     max-width: 1100px;
     margin: 0 auto;
@@ -252,6 +363,10 @@
     grid-template-columns: 1fr 1.4fr;
     gap: 5rem;
     align-items: start;
+  }
+  .book-cover-wrap {
+    position: sticky;
+    top: 7rem;
   }
   .book-cover-wrap img {
     width: 100%;
@@ -282,7 +397,12 @@
     line-height: 1.85;
     margin-bottom: 1.5rem;
   }
-  .book-divider { width: 60px; height: 1px; background: var(--gold-dim); margin: 2rem 0; }
+  .book-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold-dim);
+    margin: 2rem 0;
+  }
   .pull-quote {
     font-family: var(--serif);
     font-size: 1.2rem;
@@ -293,8 +413,17 @@
     border-left: 2px solid var(--gold);
     margin: 2rem 0;
   }
-  #teaser { background: var(--midnight); padding: 7rem 3rem; }
-  .teaser-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+
+  /* ── PROLOGUE TEASER ── */
+  #teaser {
+    background: var(--midnight);
+    padding: 7rem 3rem;
+  }
+  .teaser-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
   .teaser-inner h3 {
     font-family: var(--serif);
     font-size: 1.8rem;
@@ -325,8 +454,16 @@
     background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
     margin: 3rem 0;
   }
-  #chapters { background: var(--navy-light); padding: 7rem 3rem; }
-  .chapters-inner { max-width: 1100px; margin: 0 auto; }
+
+  /* ── CHAPTERS ── */
+  #chapters {
+    background: var(--navy-light);
+    padding: 7rem 3rem;
+  }
+  .chapters-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
   .chapters-inner h2 {
     font-family: var(--serif);
     font-size: 2.4rem;
@@ -336,18 +473,17 @@
   .chapters-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
+    gap: 0;
   }
   .chapter-card {
     padding: 2rem;
-    border: 1px solid rgba(201,168,76,0.15);
-    background: rgba(201,168,76,0.02);
-    border-radius: 4px;
+    border: 1px solid rgba(201,168,76,0.12);
     transition: background 0.25s, border-color 0.25s;
+    cursor: default;
   }
   .chapter-card:hover {
-    background: rgba(201,168,76,0.08);
-    border-color: rgba(201,168,76,0.4);
+    background: rgba(201,168,76,0.04);
+    border-color: rgba(201,168,76,0.3);
   }
   .chapter-num {
     font-family: var(--sans);
@@ -364,7 +500,12 @@
     color: var(--parchment);
     line-height: 1.4;
   }
-  #author { background: var(--navy); padding: 7rem 3rem; }
+
+  /* ── AUTHOR ── */
+  #author {
+    background: var(--navy);
+    padding: 7rem 3rem;
+  }
   .author-inner {
     max-width: 900px;
     margin: 0 auto;
@@ -385,11 +526,29 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid rgba(201,168,76,0.3);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 8px rgba(201,168,76,0.05);
   }
+  .author-socials {
+    display: flex;
+    gap: 1rem;
+  }
+  .social-link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+  }
+  .social-link:hover { border-color: var(--gold); color: var(--gold); }
   .author-bio h2 {
     font-family: var(--serif);
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--cream);
     margin-bottom: 0.25rem;
   }
@@ -408,39 +567,86 @@
     line-height: 1.85;
     margin-bottom: 1rem;
   }
-  .author-links-row {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .author-links-row a {
-    color: var(--gold);
-    font-family: var(--sans);
-    font-size: 0.85rem;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .author-links-row a:hover { text-decoration: underline; }
+
+  /* ── CONNECT ── */
   #connect {
     background: linear-gradient(135deg, var(--midnight) 0%, #0D1030 100%);
     padding: 7rem 3rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  .connect-inner { max-width: 600px; margin: 0 auto; }
+  #connect::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 65%);
+  }
+  .connect-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
   #connect h2 {
     font-family: var(--serif);
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-style: italic;
     color: var(--cream);
     margin-bottom: 1rem;
+    line-height: 1.25;
   }
   #connect p {
     color: var(--parchment);
     opacity: 0.8;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     font-size: 0.98rem;
   }
+  .email-form {
+    display: flex;
+    gap: 0;
+    max-width: 440px;
+    margin: 0 auto 2.5rem;
+  }
+  .email-form input {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-right: none;
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    padding: 0.85rem 1.25rem;
+    outline: none;
+    border-radius: 2px 0 0 2px;
+    transition: border-color 0.2s;
+  }
+  .email-form input::placeholder { color: var(--muted); opacity: 0.7; }
+  .email-form input:focus { border-color: var(--gold); }
+  .email-form button {
+    background: var(--gold);
+    color: var(--midnight);
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .email-form button:hover { background: #E0BC5E; }
+  .connect-note {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--muted);
+    opacity: 0.7;
+  }
+
+  /* ── FOOTER ── */
   footer {
     background: #050710;
     padding: 2.5rem 3rem;
@@ -449,21 +655,63 @@
     align-items: center;
     border-top: 1px solid rgba(201,168,76,0.1);
   }
-  .footer-logo { font-family: var(--serif); font-size: 1rem; color: var(--gold); font-weight: 700; }
-  .footer-copy { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); }
-  .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); text-decoration: none; }
-  .footer-links a:hover { color: var(--gold); }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .footer-copy {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .footer-links a {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .footer-links a:hover { opacity: 1; color: var(--gold); }
+
+  /* ── REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+
+  /* ── MOBILE ── */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
+    nav.scrolled { padding: 0.75rem 1.5rem; }
     .nav-links { display: none; }
     #hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 3rem; gap: 2.5rem; }
     .hero-cover { order: -1; }
     .hero-cover img { max-width: 220px; }
     .book-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .book-cover-wrap { position: static; }
     .author-inner { grid-template-columns: 1fr; text-align: center; }
-    #book, #teaser, #chapters, #author, #connect { padding: 4rem 1.5rem; }
+    .author-photo-wrap { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+    #book, #teaser, #chapters, #author, #connect { padding: 5rem 1.5rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .email-form { flex-direction: column; }
+    .email-form input { border-right: 1px solid rgba(201,168,76,0.25); border-bottom: none; border-radius: 2px 2px 0 0; }
+    .email-form button { border-radius: 0 0 2px 2px; padding: 0.85rem; }
   }
 </style>
 </head>
@@ -471,76 +719,70 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="book.html" class="nav-logo">Rahil Pamecha</a>
+  <a href="#hero" class="nav-logo">Rahil Pamecha</a>
   <ul class="nav-links">
     <li><a href="#book">The Book</a></li>
-    <li><a href="#teaser">Excerpt</a></li>
+    <li><a href="#teaser">Read</a></li>
     <li><a href="#chapters">Chapters</a></li>
     <li><a href="#author">Author</a></li>
-    <li><a href="index.html" class="portfolio-link">Tech Portfolio &rarr;</a></li>
+    <li><a href="#connect">Connect</a></li>
+    <li><a href="index.html" class="portfolio-btn">&larr; Tech Portfolio</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
+  <div class="hero-particles" id="particles"></div>
 
-  <div class="hero-cover">
-    <div style="background: linear-gradient(145deg, #161b36, #0e1228); border: 2px solid var(--gold); border-radius: 8px; padding: 2.5rem 1.5rem; text-align: center; width: 280px; box-shadow: 0 30px 60px rgba(0,0,0,0.8);">
-      <div style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem;">A Novel</div>
-      <div style="font-family: var(--serif); font-size: 2.2rem; font-weight: 900; line-height: 1.1; color: var(--cream); margin-bottom: 0.5rem;"><em>Of All</em><br>The Times</div>
-      <div style="width: 40px; height: 1px; background: var(--gold); margin: 1.5rem auto;"></div>
-      <div style="font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: var(--parchment);">Rahil Pamecha</div>
-    </div>
+  <div class="hero-cover reveal">
+    <img src="images/book-cover.jpg" alt="Of All The Times — Book Cover" loading="eager">
   </div>
 
   <div class="hero-text">
-    <div class="hero-eyebrow">Debut Novel by Rahil Pamecha</div>
-    <h1 class="hero-title">
+    <div class="hero-eyebrow reveal">Debut Novel</div>
+    <h1 class="hero-title reveal reveal-delay-1">
       <em>Of All</em><br>The Times
     </h1>
-    <p class="hero-author">By Rahil Pamecha</p>
-    <p class="hero-tagline">
+    <p class="hero-author reveal reveal-delay-2">Rahil Pamecha</p>
+    <p class="hero-tagline reveal reveal-delay-2">
       "A love story about two people who were always right for each other — and never quite at the same time."
     </p>
-    <div class="hero-cta">
+    <div class="hero-cta reveal reveal-delay-3">
       <a href="#book" class="btn btn-primary">Discover the Story</a>
       <a href="#teaser" class="btn btn-outline">Read an Excerpt</a>
     </div>
   </div>
+
+  <div class="hero-scroll">Scroll</div>
 </section>
 
 <!-- BOOK -->
 <section id="book">
   <div class="book-inner">
-    <div class="book-cover-wrap">
-      <div style="background: linear-gradient(145deg, #161b36, #0e1228); border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 3rem 2rem; text-align: center;">
-        <div style="font-family: var(--serif); font-size: 1.8rem; color: var(--gold); margin-bottom: 0.5rem;">Of All The Times</div>
-        <div style="font-family: var(--sans); font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">By Rahil Pamecha</div>
-        <div class="book-divider" style="margin: 1.5rem auto;"></div>
-        <p style="font-size: 0.9rem; color: var(--parchment); font-style: italic;">"A story about the grief of almost."</p>
-      </div>
+    <div class="book-cover-wrap reveal">
+      <img src="images/book-cover.jpg" alt="Of All The Times" loading="lazy">
     </div>
     <div class="book-content">
-      <div class="section-label">The Novel</div>
-      <h2><em>Of All The Times</em></h2>
-      <p class="book-meta">Literary Romance &nbsp;·&nbsp; Written by Rahil Pamecha</p>
-      <p class="book-description">
+      <div class="section-label reveal">The Novel</div>
+      <h2 class="reveal reveal-delay-1"><em>Of All The Times</em></h2>
+      <p class="book-meta reveal reveal-delay-1">Literary Romance &nbsp;·&nbsp; Part One Available</p>
+      <p class="book-description reveal reveal-delay-2">
         Ethan Hartley has spent his life building something no one can take from him — a career, a certainty, a fortress assembled brick by careful brick from the ruins of his father's collapse. Love, he decided at twelve years old, is simply the most efficient way to lose something.
       </p>
-      <p class="book-description">
+      <p class="book-description reveal reveal-delay-2">
         Nora Calloway arrived early to everything, because she understood earlier than most that tomorrow was not guaranteed. She loved the way her mother had taught her — fully, without hiding, with her whole heart still in front of her.
       </p>
-      <p class="book-description">
+      <p class="book-description reveal reveal-delay-2">
         They were, by every account that matters, made for each other. They were also, by that same account, never quite going to find each other at the same time.
       </p>
-      <div class="book-divider"></div>
-      <blockquote class="pull-quote">
+      <div class="book-divider reveal"></div>
+      <blockquote class="pull-quote reveal">
         "This is not a story about two people who didn't love each other. It is a story about two people who loved each other completely, and simply never once managed to do it on the same day."
       </blockquote>
-      <div class="book-divider"></div>
-      <p class="book-description">
-        <em>Of All The Times</em> by <strong>Rahil Pamecha</strong> moves across years, across other loves, across a silence that grows slowly between two people who keep finding each other at exactly the wrong moment — until the moment arrives that cannot be walked away from.
+      <div class="book-divider reveal"></div>
+      <p class="book-description reveal">
+        <em>Of All The Times</em> moves across years, across other loves, across a silence that grows slowly between two people who keep finding each other at exactly the wrong moment — until the moment arrives that cannot be walked away from.
       </p>
     </div>
   </div>
@@ -549,23 +791,23 @@
 <!-- PROLOGUE TEASER -->
 <section id="teaser">
   <div class="teaser-inner">
-    <div class="section-label" style="justify-content:center;">From the Prologue</div>
-    <h3>A story about the grief of almost.</h3>
-    <div class="fade-line"></div>
-    <p class="teaser-text">
+    <div class="section-label reveal" style="justify-content:center;">From the Prologue</div>
+    <h3 class="reveal reveal-delay-1">A story about the grief of almost.</h3>
+    <div class="fade-line reveal"></div>
+    <p class="teaser-text reveal">
       There is a moment that happens before every love story begins — a moment nobody marks, because nobody knows yet that it matters. It looks like nothing. A hallway. A glance held one second too long. A name said by someone else in passing, filed away without ceremony.
     </p>
-    <p class="teaser-text">
+    <p class="teaser-text reveal">
       It is only afterward, when the story has already finished happening, that you go back and find it: that was the place everything turned. That was the first thread.
     </p>
-    <p class="teaser-text">
+    <p class="teaser-text reveal">
       He did not believe in love so much as he believed in proof. She did not believe in proof so much as she believed in presence. They found each other somewhere in the middle of those two truths, and for a while, they built something neither of them could name.
     </p>
-    <p class="teaser-text">
+    <p class="teaser-text reveal">
       Then he looked away. And by the time he looked back, the world had moved on without him.
     </p>
-    <div class="fade-line"></div>
-    <p class="teaser-end">
+    <div class="fade-line reveal"></div>
+    <p class="teaser-end reveal">
       Of all the times. Of all the chances.<br>
       Of all the ways a person can be standing right next to everything they need,<br>
       and still manage to walk away from it.
@@ -576,32 +818,36 @@
 <!-- CHAPTERS -->
 <section id="chapters">
   <div class="chapters-inner">
-    <div class="section-label">Inside the Book</div>
-    <h2>Part One — What We Build</h2>
+    <div class="section-label reveal">Inside the Book</div>
+    <h2 class="reveal reveal-delay-1">Part One — What We Build</h2>
     <div class="chapters-grid">
-      <div class="chapter-card">
+      <div class="chapter-card reveal">
         <div class="chapter-num">Chapter One</div>
         <div class="chapter-title">The Floor Beneath Your Feet</div>
       </div>
-      <div class="chapter-card">
+      <div class="chapter-card reveal reveal-delay-1">
         <div class="chapter-num">Chapter Two</div>
         <div class="chapter-title">The Girl in Bio 304</div>
       </div>
-      <div class="chapter-card">
+      <div class="chapter-card reveal reveal-delay-2">
         <div class="chapter-num">Chapter Three</div>
         <div class="chapter-title">Borrowed Afternoons</div>
       </div>
-      <div class="chapter-card">
+      <div class="chapter-card reveal reveal-delay-3">
         <div class="chapter-num">Chapter Four</div>
         <div class="chapter-title">Sunday at the Hartleys'</div>
       </div>
-      <div class="chapter-card">
+      <div class="chapter-card reveal">
         <div class="chapter-num">Chapter Five</div>
         <div class="chapter-title">The Weight of Almost Enough</div>
       </div>
-      <div class="chapter-card">
+      <div class="chapter-card reveal reveal-delay-1">
         <div class="chapter-num">Chapter Six</div>
         <div class="chapter-title">What We Call It</div>
+      </div>
+      <div class="chapter-card reveal reveal-delay-2" style="border-style: dashed; opacity: 0.5;">
+        <div class="chapter-num">Coming Soon</div>
+        <div class="chapter-title">More chapters in progress...</div>
       </div>
     </div>
   </div>
@@ -610,23 +856,42 @@
 <!-- AUTHOR -->
 <section id="author">
   <div class="author-inner">
-    <div class="author-photo-wrap">
-      <div style="width: 180px; height: 180px; border-radius: 50%; background: linear-gradient(135deg, #2563eb, #c9a84c); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-family: var(--serif);">RP</div>
-    </div>
-    <div class="author-bio">
-      <div class="section-label">About the Author</div>
-      <h2>Rahil Pamecha</h2>
-      <p class="bio-title">Author of "Of All The Times" & Software Professional</p>
-      <p><strong>Rahil Pamecha</strong> writes with a quiet intensity, capturing the ache of unspoken words, one-sided love, and the beauty found in heartbreak.</p>
-      <p>With a minimalist voice and emotional depth, stories by <strong>Rahil Pamecha</strong> explore the fragile spaces between connection and solitude — the silences between people who should have said more, and the distances between those who felt too much to speak.</p>
-      <p>Alongside creative writing, Rahil Pamecha is a software professional based in Pune, India, with a background in engineering and enterprise technology at Barclays.</p>
-      <div class="author-links-row">
-        <a href="index.html">&larr; Main Profile</a> ·
-        <a href="about.html">Full Biography</a> ·
-        <a href="https://in.linkedin.com/in/rahilpamecha" target="_blank">LinkedIn</a> ·
-        <a href="https://github.com/rahilpamecha" target="_blank">GitHub</a>
+    <div class="author-photo-wrap reveal">
+      <img class="author-photo" src="images/rahil-pamecha-author.jpg" alt="Rahil Pamecha">
+      <div class="author-socials">
+        <a href="https://in.linkedin.com/in/rahilpamecha" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.5 1.5 0 1 0-.01-3 1.5 1.5 0 0 0 .01 3m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
+        </a>
+        <a href="https://github.com/rahilpamecha" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        </a>
+        <a href="index.html" class="social-link" title="Tech Portfolio" aria-label="Tech Portfolio">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </a>
       </div>
     </div>
+    <div class="author-bio">
+      <div class="section-label reveal">About the Author</div>
+      <h2 class="reveal reveal-delay-1">Rahil Pamecha</h2>
+      <p class="bio-title reveal reveal-delay-1">Writer — Of All The Times</p>
+      <p class="reveal reveal-delay-2">Rahil Pamecha writes with a quiet intensity, capturing the ache of unspoken words, one-sided love, and the beauty found in heartbreak.</p>
+      <p class="reveal reveal-delay-2">With a minimalist voice and emotional depth, their stories explore the fragile spaces between connection and solitude — the silences between people who should have said more, and the distances between those who felt too much to speak.</p>
+      <p class="reveal reveal-delay-3">When not writing, Rahil Pamecha can be found collecting moments in silence, believing that the deepest emotions live between the lines.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect">
+  <div class="connect-inner">
+    <div class="section-label reveal" style="justify-content:center;">Stay in the Story</div>
+    <h2 class="reveal reveal-delay-1">Be the first to know<br><em>when the next chapter arrives.</em></h2>
+    <p class="reveal reveal-delay-2">Join readers following the journey of <em>Of All The Times</em>. No noise — just new chapters, notes from the writing process, and the occasional quote that needed to exist.</p>
+    <form class="email-form reveal reveal-delay-2" onsubmit="handleSubscribe(event)">
+      <input type="email" placeholder="Your email address" required id="email-input">
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="connect-note reveal reveal-delay-3">No spam. Unsubscribe anytime. Your email stays yours.</p>
   </div>
 </section>
 
@@ -635,13 +900,68 @@
   <div class="footer-logo">Rahil Pamecha — Author</div>
   <div class="footer-copy">&copy; 2026 Rahil Pamecha. All rights reserved.</div>
   <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="book.html">The Book</a>
-    <a href="blog.html">Blog</a>
-    <a href="resume.html">Resume</a>
+    <a href="#book">The Book</a>
+    <a href="#teaser">Read Excerpt</a>
+    <a href="#chapters">Chapters</a>
+    <a href="#author">Author</a>
+    <a href="#connect">Stay in Touch</a>
+    <a href="index.html" style="color: var(--gold); font-weight: 500;">&larr; Tech Portfolio</a>
   </div>
 </footer>
 
+<script>
+// Nav scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Intersection observer — reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+// Hero reveals immediately
+document.querySelectorAll('#hero .reveal').forEach((el, i) => {
+  setTimeout(() => el.classList.add('visible'), 200 + i * 150);
+});
+
+// Particles
+const particleContainer = document.getElementById('particles');
+for (let i = 0; i < 25; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.cssText = `
+    left: ${30 + Math.random() * 40}%;
+    top: ${20 + Math.random() * 50}%;
+    --dur: ${5 + Math.random() * 8}s;
+    --delay: ${Math.random() * 6}s;
+    --dx: ${(Math.random() - 0.5) * 60}px;
+    --max-op: ${0.2 + Math.random() * 0.35};
+    width: ${1 + Math.random() * 2}px;
+    height: ${1 + Math.random() * 2}px;
+  `;
+  particleContainer.appendChild(p);
+}
+
+// Subscribe
+function handleSubscribe(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const input = document.getElementById('email-input');
+  btn.textContent = 'Thank you ✓';
+  btn.style.background = '#5A8A5A';
+  input.value = '';
+  input.disabled = true;
+  btn.disabled = true;
+}
+</script>
 </body>
 </html>
